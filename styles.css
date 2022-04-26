@@ -1,19 +1,22 @@
-/*GENERAL*/
+/*FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+/*RESET*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*COLORS*/
 :root {
   --color-white: #ffffff;
   --color-black: #141518;
   --color-coral: #ff424d;
+  --color-grey: #b1b1b185;
 }
 
+/*SCROLL BEHAVIOR*/
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -23,8 +26,19 @@ section {
   scroll-margin-top: 100px;
 }
 
+/*SCROLLBAR*/
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--color-grey);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-coral);
+}
+
+/*GENERAL*/
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Questrial', sans-serif;
   color: var(--color-black);
   background-color: var(--color-white);
   line-height: 1.4;
@@ -40,43 +54,67 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--color-coral);
-  text-decoration: underline;
+h2 {
+  font-size: 2.5rem;
+  font-weight: 2000;
+  margin-bottom: 40px;
 }
 
+p {
+  font-size: 1.35rem;
+}
+
+/*HEADER*/
 #header {
   position: sticky;
   top: 0;
   z-index: 2;
   min-height: 75px;
-  width: 100%;
   height: 80px;
+  width: 100%;
   padding: 0px 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: var(--color-white);
-  border-bottom: var(--color-black) 1px solid;
+  border-bottom: var(--color-grey) .5px solid;
+  font-size: 1.2rem;
 }
 
 #header-img {
-  width: 20%;
+  width: 60px;
   padding: 5px;
 }
 
-#nav-bar ul {
+.nav-list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
-#nav-bar ul li a {
-  margin: 40px;
+.nav-list li {
+  padding: 10px 15px;
+  position: relative;
+  align-self: center;
 }
 
-/*QUE ES PATREON*/
+.nav-list a:after {
+  opacity: 0;
+  content: "";
+  width: 0;
+  height: 4px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-coral);
+  transition: width 0.4s;
+}
 
+a:hover::after {
+  width: 65%;
+  opacity: 1;
+}
+
+/*INTRO*/
 .intro {
   display: flex;
   justify-content: space-evenly;
@@ -85,38 +123,39 @@ a:hover {
   color: var(--color-white);
   padding: 50px;
   z-index: 1;
+  height: 35em;
+  margin-bottom: 50px;
 }
 
 h1 {
   color: var(--color-coral);
   font-weight: bold;
   font-size: 3rem;
+  width: 80%;
 }
 
 .text-intro {
   font-size: 1.5rem;
+  width: 80%;
+  margin-top: 35px;
 }
 
 #video {
   border: none;
 }
 
-.que-es {
+/*QUE ES PATREON*/
+#que-es-patreon {
   text-align: center;
   padding: 3%;
-  line-height: 2;
 }
 
-h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+#que-es-patreon>p {
+  margin: auto;
+  width: 70%;
+  line-height: 40px;
 }
 
-p {
-  font-size: 1.25rem;
-  font-weight: 599;
-}
 
 /*QUIEN USA PATREON*/
 #quien-usa-patreon {
@@ -124,12 +163,18 @@ p {
   padding: 3%;
 }
 
+#quien-usa-patreon>p {
+  margin: auto;
+  width: 65%;
+  line-height: 35px;
+}
+
 .usuarios {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: 50px 20px 0px;
-  font-size: 1.15rem;
-  font-weight: 599;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: rgb(155, 153, 148);
+  line-height: 40px;
 }
 
 .usuarios li:hover {
@@ -143,34 +188,43 @@ p {
   padding: 3%;
 }
 
+#precios>p {
+  margin: auto;
+  width: 70%;
+  line-height: 40px;
+}
+
 .precios {
+  align-items: center;
   display: flex;
+  justify-content: center;
   margin-top: 50px;
 }
 
 .product {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: calc(100% / 3);
-  margin: 10px;
-  border: 1px solid #000;
-  border-radius: 3px;
+  justify-content: center;
+  flex: 1;
+  margin: 0 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
 }
 
 .plan {
   background-color: var(--color-coral);
-  color: black;
+  color: var(--color-white);
   padding: 15px 0;
   width: 100%;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: bold;
   margin: 10%;
 }
 
 .plan-description {
   margin: 50px 20px 30px;
+  font-size: 1.15em;
 }
 
 h3 {
@@ -184,40 +238,47 @@ span {
 }
 
 .product-ul {
-  margin: 15px 0;
   text-align: left;
-  font-weight: 600;
 }
 
 .product-ul li {
   padding: 5px 0;
   list-style-type: square;
+  margin: auto;
+  width: 80%;
 }
 
 .btn {
   padding: 0 20px;
-  height: 40px;
+  height: 50px;
+  width: 80%;
   font-size: 1em;
-  font-weight: 900;
-  text-transform: uppercase;
-  border: 3px var(--color-coral) solid;
-  border-radius: 2px;
-  background: transparent;
+  color: var(--color-white);
+  background: var(--color-coral);
+  border: none;
   cursor: pointer;
-  margin: 15px 0;
+  margin: 50px 0;
+  border-radius: 28px;
 }
 
 /*FOOTER*/
 footer {
-  background-color: var(--color-coral);
+  background-color: var(--color-black);
   padding: 2%;
+  margin-top: 60px;
+  text-align: center;
+}
+
+footer>p {
+  color: var(--color-white);
+  font-size: 2em;
+  font-weight: 600;
 }
 
 #form {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: auto;
+  margin: 40px auto auto auto;
 }
 
 #email {
@@ -230,24 +291,20 @@ footer {
 #submit {
   padding: 0 20px;
   height: 40px;
+  width: 50%;
+  margin: 30px auto;
   font-size: 1em;
   font-weight: 900;
   text-transform: uppercase;
-  border: 3px var(--color-black) solid;
+  border: .5px var(--color-coral) solid;
+  color: var(--color-white);
   border-radius: 2px;
   background: transparent;
   cursor: pointer;
-  margin: 2%;
 }
 
 /*SMARTPHONE*/
-
 @media (max-width: 425px) {
-  #header {
-    flex-wrap: wrap;
-    height: auto;
-  }
-
   .logo {
     margin-top: 15px;
     width: 100%;
@@ -261,28 +318,14 @@ footer {
   }
 
   #nav-bar {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 5px 0px;
-  }
-
-  #nav-bar li {
-    padding-bottom: 5px;
-    width: 100%;
-  }
-
-  #nav-bar>ul {
-    flex-direction: column;
+    display: none;
   }
 
   .intro {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    height: 42em;
   }
 
   .text-intro {
@@ -306,10 +349,28 @@ footer {
     width: 100%;
   }
 
+  #que-es-patreon {
+    margin-bottom: 50px;
+  }
+
+  #que-es-patreon>p {
+    line-height: 30px;
+  }
+
+  #quien-usa-patreon>p {
+    line-height: 30px;
+  }
+
   .usuarios {
     display: flex;
     flex-direction: column;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 30px;
+    margin: 50px 20px;
+  }
+
+  #precios>p {
+    line-height: 30px;
   }
 
   .precios {
@@ -323,6 +384,18 @@ footer {
     margin-bottom: 10px;
   }
 
+  .product>p:first-of-type {
+    width: 70%;
+  }
+
+  span {
+    font-size: 1.5rem;
+  }
+
+  .plan-description {
+    font-size: 0.9rem;
+  }
+
   .product-ul {
     font-size: 0.9rem;
     text-align: center;
@@ -332,17 +405,30 @@ footer {
     list-style-type: none;
   }
 
+  .btn {
+    width: 50%;
+    height: 40px;
+  }
+
+
   footer {
     padding: 40px;
     margin-top: 40px;
   }
 
+  footer>p {
+    font-size: 1.5em;
+  }
+
   #form {
-    width: 100%;
+    width: 90%;
   }
 
   #email {
-    width: 100%;
-    margin: auto;
+    width: 90%;
+  }
+
+  #submit {
+    width: 90%;
   }
 }

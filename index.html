@@ -13,12 +13,11 @@
 <body>
   <header id="header">
     <div class="logo">
-      <img src="https://www.freepnglogos.com/uploads/patreon-logo-png/patreon-logo-red-simple-picture-10.png"
-        alt="patreon logo" id="header-img" />
+      <img src="./logo.png" alt="patreon logo" id="header-img" />
     </div>
 
     <nav id="nav-bar">
-      <ul>
+      <ul class="nav-list">
         <li>
           <a class="nav-link" href="#que-es-patreon"> ¿Qué es Patreon? </a>
         </li>
@@ -32,30 +31,25 @@
     </nav>
   </header>
 
-  <section id="que-es-patreon">
-    <div class="intro">
-      <div>
-        <h1>Cambia la forma de hacer valer tu arte</h1>
-        <p class="text-intro">
-          Deja que tus fans más dedicados apoyen tu trabajo creativo con
-          suscripciones mensuales.
-        </p>
-      </div>
-      <iframe id="video" width="560" height="315" src="https://player.vimeo.com/video/399742289"></iframe>
-    </div>
-
-    <div class="que-es">
-      <h2>¿Qué es Patreon?</h2>
-      <p>
-        En Patreon, puedes ofrecer a tus fans una suscripción mensual para
-        involucrarlos todavía más en ese trabajo que tanto les gusta. Podrán
-        disfrutar de contenido exclusivo, compartir experiencias con la
-        comunidad y ver de primera mano cómo es tu proceso creativo. A cambio
-        recibes la libertad que necesitas para hacer mejor tu trabajo y la
-        estabilidad que te hace falta para independizarte en tu carrera
-        creativa.
+  <div class="intro">
+    <div>
+      <h1>Cambia la forma de hacer valer tu arte</h1>
+      <p class="text-intro">
+        Deja que tus fans más dedicados apoyen tu trabajo creativo con
+        suscripciones mensuales.
       </p>
     </div>
+    <iframe id="video" width="560" height="315" src="https://player.vimeo.com/video/399742289"></iframe>
+  </div>
+
+  <section id="que-es-patreon">
+    <h2>¿Qué es Patreon?</h2>
+    <p>
+      En Patreon, puedes ofrecer a tus fans una suscripción mensual para involucrarlos todavía más en ese trabajo que
+      tanto les gusta. Podrán disfrutar de contenido exclusivo, compartir experiencias con la comunidad y ver de primera
+      mano cómo es tu proceso creativo. A cambio recibes la libertad que necesitas para hacer mejor tu trabajo y la
+      estabilidad que te hace falta para independizarte en tu carrera creativa.
+    </p>
   </section>
 
   <section id="quien-usa-patreon">
@@ -139,11 +133,12 @@
   </section>
 
   <footer>
+    <p>Estás a un paso de poner tus propias reglas.</p>
+    <p>¿Empezamos?</p>
     <div>
       <form id="form" action="https://www.freecodecamp.com/email-submit">
-        <input id="email" type="email" name="email" placeholder="Ingresa tu email para recibir novedades" class="email"
-          required />
-        <input id="submit" type="submit" value="Empezar" />
+        <input id="email" type="email" name="email" placeholder="Ingresa tu email" class="email" required />
+        <input id="submit" type="submit" value="Enviar" />
       </form>
     </div>
   </footer>
